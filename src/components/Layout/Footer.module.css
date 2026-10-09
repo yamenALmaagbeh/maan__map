@@ -1,0 +1,15 @@
+.footer { margin-top: var(--sp-12); background: var(--night); color: #e9e6df; padding-block: var(--sp-10) var(--sp-8); }
+.note {
+  display: flex; gap: var(--sp-3); align-items: flex-start; padding: var(--sp-4) var(--sp-5);
+  border-radius: var(--r-md); background: rgb(255 255 255 / 0.06); border: 1px solid rgb(255 255 255 / 0.1);
+  color: rgb(255 255 255 / 0.78); font-size: var(--fs-sm); line-height: 1.9;
+}
+.note svg { flex: none; margin-top: 4px; color: #f0b23c; }
+.row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--sp-6); margin-top: var(--sp-8); align-items: center; }
+.athar { display: flex; align-items: center; gap: var(--sp-4); }
+.athar img { width: 60px; height: 60px; border-radius: 16px; object-fit: cover; background: #fff; }
+.athar div, .legal { display: flex; flex-direction: column; gap: 2px; }
+.athar strong, .legal strong { font-family: var(--font-display); font-weight: 600; }
+.athar span, .legal span { color: rgb(255 255 255 / 0.62); font-size: var(--fs-sm); }
+.legal { max-width: 46ch; }
+@media (max-width: 640px) { .row { flex-direction: column; align-items: flex-start; } }

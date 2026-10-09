@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Dalil Maan — design tokens
+   Identity: the logo's deep teal + sandstone copper, set against Ma'an's
+   limestone neutrals and Petra-night blues. Category hues keep the UI from
+   collapsing into a single beige/brown wash.
+   ========================================================================== */
+:root {
+  /* type */
+  --font-display: 'Readex Pro', 'IBM Plex Sans Arabic', 'Cairo', Tahoma, system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans Arabic', 'Cairo', Tahoma, system-ui, sans-serif;
+  --fs-xs: 0.78rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: clamp(1.6rem, 1.2rem + 1.6vw, 2.1rem);
+  --fs-hero: clamp(2rem, 1.3rem + 3.2vw, 3.6rem);
+
+  /* spacing (4px base) */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px;
+
+  /* radius scale: control < card < panel < pill */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.22, 0.8, 0.28, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 160ms;
+  --t-base: 260ms;
+  --t-slow: 520ms;
+
+  --container: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+}
+
+/* ---------- light: limestone + teal ---------- */
+:root, :root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f0ece4;
+  --surface: #fbfaf7;
+  --surface-2: #e7e1d6;
+  --sunken: #e3ddd1;
+  --ink: #14232b;
+  --ink-soft: #33454d;
+  --muted: #5a696f;
+  --line: #d8d0c1;
+  --line-soft: #e5dfd3;
+
+  --brand: #12525c;
+  --brand-strong: #0b3b44;
+  --on-brand: #ffffff;
+  --brand-tint: #d9e8e7;
+  --sand: #c48655;
+  --sand-tint: #f0dfcd;
+  --focus: #1c8a97;
+
+  --night: #0b1a22;
+
+  --tone-all: #12525c;      --tone-all-ink: #0b3b44;      --tone-all-tint: #d9e8e7;
+  --tone-services: #1c7f9a; --tone-services-ink: #0d566b; --tone-services-tint: #d5eaf1;
+  --tone-shop: #cf8a0e;     --tone-shop-ink: #7a4f00;     --tone-shop-tint: #f7e6c0;
+  --tone-culture: #5567bd;  --tone-culture-ink: #34448f;  --tone-culture-tint: #dde1f5;
+  --tone-youth: #b4503f;    --tone-youth-ink: #86331f;    --tone-youth-tint: #f3d9d2;
+  --tone-fun: #2f8a58;      --tone-fun-ink: #1d5f3c;      --tone-fun-tint: #d6ebdd;
+
+  --shadow-1: 0 1px 2px rgb(20 35 43 / 0.06), 0 2px 8px rgb(20 35 43 / 0.05);
+  --shadow-2: 0 2px 4px rgb(20 35 43 / 0.05), 0 12px 28px rgb(20 35 43 / 0.10);
+  --shadow-3: 0 8px 16px rgb(20 35 43 / 0.08), 0 28px 56px rgb(20 35 43 / 0.18);
+}
+
+/* ---------- dark: Petra at night ---------- */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0b171e;
+  --surface: #12232c;
+  --surface-2: #1a2f3a;
+  --sunken: #0e1d25;
+  --ink: #ece8df;
+  --ink-soft: #cfd6d6;
+  --muted: #9bafb5;
+  --line: #244050;
+  --line-soft: #1c3340;
+
+  --brand: #45c0b8;
+  --brand-strong: #7dd8d1;
+  --on-brand: #052421;
+  --brand-tint: #14383a;
+  --sand: #e0a878;
+  --sand-tint: #3a2c20;
+  --focus: #7dd8d1;
+
+  --tone-all: #45c0b8;      --tone-all-ink: #8fe0da;      --tone-all-tint: #14383a;
+  --tone-services: #5cb8d6; --tone-services-ink: #9ad8ec; --tone-services-tint: #143544;
+  --tone-shop: #f0b23c;     --tone-shop-ink: #f8d488;     --tone-shop-tint: #3b2f14;
+  --tone-culture: #8d9df0;  --tone-culture-ink: #bcc6fa;  --tone-culture-tint: #232b52;
+  --tone-youth: #ee8a78;    --tone-youth-ink: #f6b4a7;    --tone-youth-tint: #46231d;
+  --tone-fun: #5fcf90;      --tone-fun-ink: #a4e8c2;      --tone-fun-tint: #143826;
+
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 0.35);
+  --shadow-2: 0 2px 4px rgb(0 0 0 / 0.3), 0 14px 30px rgb(0 0 0 / 0.35);
+  --shadow-3: 0 10px 20px rgb(0 0 0 / 0.35), 0 32px 60px rgb(0 0 0 / 0.5);
+}

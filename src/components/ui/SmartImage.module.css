@@ -1,0 +1,12 @@
+.frame { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; background: var(--sunken); }
+.frame::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(100deg, transparent 20%, color-mix(in srgb, var(--ink) 8%, transparent) 50%, transparent 80%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  transition: opacity var(--t-base);
+}
+.done::before { opacity: 0; animation: none; }
+.img { width: 100%; height: 100%; opacity: 0; transform: scale(1.03); transition: opacity var(--t-slow) var(--ease-out), transform 0.9s var(--ease-out); }
+.done .img { opacity: 1; transform: none; }
+@keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }

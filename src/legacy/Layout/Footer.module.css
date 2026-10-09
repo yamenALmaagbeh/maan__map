@@ -1,0 +1,55 @@
+.footer {
+  background: var(--navy);
+  color: var(--white);
+  padding: var(--space-lg) var(--page-px);
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.teamName {
+  font-size: var(--text-xl);
+  font-weight: 800;
+}
+
+.tagline {
+  font-size: var(--text-sm);
+  color: #dceae8;
+  font-weight: 400;
+}
+
+.info {
+  text-align: left;
+}
+
+.copy {
+  font-size: var(--text-xs);
+  color: #b8cdc9;
+}
+
+@media (max-width: 650px) {
+  .footer {
+    padding: var(--space-lg) var(--page-px);
+  }
+
+  .footerInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .info {
+    text-align: right;
+  }
+}

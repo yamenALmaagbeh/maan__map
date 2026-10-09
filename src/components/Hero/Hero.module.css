@@ -1,0 +1,62 @@
+.hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: clamp(560px, 86svh, 780px);
+  display: flex; flex-direction: column;
+  color: #fff; background: var(--night);
+  padding-bottom: 96px; /* room for the overlapping toolbar */
+}
+.bg { position: absolute; inset: 0; z-index: -3; }
+.bg img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 48%;
+  opacity: 0; transform: scale(1.07);
+  transition: opacity 1s var(--ease-out), transform 2.4s var(--ease-out);
+}
+.bg img.loaded { opacity: 1; transform: none; }
+.scrim {
+  position: absolute; inset: 0; z-index: -2;
+  background:
+    linear-gradient(to left, rgb(8 22 30 / 0.78) 0%, rgb(8 22 30 / 0.35) 55%, transparent 100%),
+    linear-gradient(to top, rgb(8 22 30 / 0.96) 0%, rgb(8 22 30 / 0.5) 42%, rgb(8 22 30 / 0.3) 100%);
+}
+
+.header { display: flex; align-items: center; justify-content: space-between; padding-block: var(--sp-5); }
+.brand { display: flex; align-items: center; gap: var(--sp-3); }
+.logo {
+  width: 50px; height: 50px; border-radius: 14px; background: transparent; padding: 0;
+  display: grid; place-items: center; box-shadow: 0 6px 18px rgb(0 0 0 / 0.3);
+}
+.logo img { width: 100%; height: 100%; object-fit: contain; }
+.brandName { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-lg); }
+
+.body { flex: 1; display: flex; align-items: flex-end; padding-top: var(--sp-10); padding-bottom: 130px; /* keeps the title where it sat before the paragraph and tagline were removed */ }
+.copy { max-width: 660px; display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-5); }
+.label {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: 6px var(--sp-4); border-radius: var(--r-pill);
+  border: 1px solid rgb(255 255 255 / 0.28); background: rgb(255 255 255 / 0.08);
+  font-size: var(--fs-sm); font-weight: 500;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #f0b23c; box-shadow: 0 0 0 4px rgb(240 178 60 / 0.25); }
+.title { font-size: var(--fs-hero); line-height: 1.32; font-weight: 600; text-wrap: balance; }
+.text { font-size: var(--fs-md); line-height: 1.85; color: rgb(255 255 255 / 0.86); max-width: 52ch; }
+
+/* the one orchestrated moment: staggered rise on first paint */
+.rise { opacity: 0; transform: translateY(16px); animation: rise 0.75s var(--ease-out) forwards; animation-delay: calc(var(--d, 0) * 90ms + 120ms); }
+@keyframes rise { to { opacity: 1; transform: none; } }
+
+@media (max-width: 640px) {
+  .hero { min-height: 540px; padding-bottom: 80px; }
+  .body { padding-bottom: 170px; }
+  .brandName { font-size: var(--fs-md); }
+  .text { font-size: var(--fs-base); }
+}
+
+/* ---------- light mode: daylight Petra panorama, same layout and white text ---------- */
+.bg img.day { object-position: center 50%; }
+.scrimDay {
+  background:
+    linear-gradient(to left, rgb(8 22 30 / 0.6) 0%, rgb(8 22 30 / 0.25) 55%, transparent 100%),
+    linear-gradient(to top, rgb(8 22 30 / 0.75) 0%, rgb(8 22 30 / 0.35) 45%, rgb(8 22 30 / 0.2) 100%);
+}
+:root:not([data-theme='dark']) .title { text-shadow: 0 2px 18px rgb(8 22 30 / 0.35); }
+@media (max-width: 640px) { .bg img.day { object-position: 36% center; } }

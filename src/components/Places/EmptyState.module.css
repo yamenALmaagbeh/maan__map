@@ -1,0 +1,19 @@
+.empty {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--sp-3);
+  padding: var(--sp-12) var(--sp-6); border: 1.5px dashed var(--line); border-radius: var(--r-xl);
+  animation: in var(--t-slow) var(--ease-out) both;
+}
+.icon { width: 68px; height: 68px; display: grid; place-items: center; border-radius: 50%; background: var(--brand-tint); color: var(--brand); }
+.icon svg { animation: spin 1.4s var(--ease-io) both; }
+.empty h3 { font-size: var(--fs-lg); }
+.empty p { color: var(--muted); }
+.btn {
+  margin-top: var(--sp-2); min-height: 46px; padding: 0 var(--sp-6); border: 0; border-radius: var(--r-pill);
+  background: var(--brand); color: var(--on-brand); font-weight: 600;
+  transition: transform var(--t-fast) var(--ease-out), background var(--t-fast);
+}
+.btn:hover { background: var(--brand-strong); transform: translateY(-1px); }
+:root[data-theme='dark'] .btn:hover { background: color-mix(in srgb, var(--brand) 82%, white); }
+.btn:active { transform: scale(0.97); }
+@keyframes in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes spin { from { transform: rotate(-120deg); } to { transform: none; } }

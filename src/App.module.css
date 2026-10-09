@@ -1,0 +1,5 @@
+.page { min-height: 100svh; }
+.main { padding-block: var(--sp-8) 0; }
+.head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-4); margin-bottom: var(--sp-5); }
+.head h2 { font-size: var(--fs-lg); }
+.head strong { font-family: var(--font-display); font-weight: 500; font-size: var(--fs-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
